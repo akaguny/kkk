@@ -16,7 +16,7 @@
     border: solid #000000 1px;
 }
 
-#playTable > .playCard {
+#playTable .playCard {
     display: block;
     width: 235px;
     height: 350px;

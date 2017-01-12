@@ -1,5 +1,10 @@
 <p>Заготовка игрового поля</p>
 <div id="playTable">
-    <p class="text">Привет Мир!</p>
-    <div class="playCard"></div>
+    <p class="text">Привет совсем новый, любимый, прекрасный мир!
+    <br>Интересно!</p>
+    <div ng-controller="GetCardsCtrl">
+    <ul>
+        <li ng-repeat="cards in cards" ng-click="showAlert($index);" class="playCard">{{cards.name}}</li>
+    </ul>
+    </div>
 </div>
