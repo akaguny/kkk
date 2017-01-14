@@ -1,16 +1,15 @@
 <div id="playTable">
-    <div ng-controller="cardsCtrl">
+        <!-- Холдеры -->
+        <div ng-repeat="holder in placeHolders" class="card cardPlaceHolder"
+             ng-class="getCardClass(holder)"
+             ng-click="putCardInPlaceholder(holder, getCardsCheckedAtTheMoment())">
+            <p>
+                {{holder.type}}<br>
+                {{holder.name}}<br>
+                {{holder.layer}}<br>
+            </p>
+        </div>
         <form name="playGround">
-            <!-- Холдеры -->
-            <div ng-repeat="holder in placeHolders" class="card cardPlaceHolder"
-                 ng-class="getCardClass(holder)"
-                 ng-click="putCardInPlaceholder(holder, getCardsCheckedAtTheMoment())">
-                <p>
-                    {{holder.type}}<br>
-                    {{holder.name}}<br>
-                    {{holder.layer}}<br>
-                </p>
-            </div>
             <!-- Игральные карты -->
             <label ng-repeat="card in cards" id="playCard-{{$index}}" class="card"
                    ng-class="getCardClass(card)"
@@ -24,5 +23,4 @@
                 <input class="hidden" type="checkbox" ng-click="changeCheckState(card);"></input>
             </label>
         </form>
-    </div>
 </div>

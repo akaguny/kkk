@@ -4,7 +4,7 @@ angular
   .module('boardGame.card')
   // Логика, не связанная с представлением
   .controller('cardsCtrl', cardsCtrl);
-
+//TODO: разделить на 2 контроллера: placeHolderCardCtrl и playingCardCtrl
 function cardsCtrl($scope , CardDataService) {
   // Карты, выбранные в данный момент
   var cardsCheckedAtTheMoment = [];
