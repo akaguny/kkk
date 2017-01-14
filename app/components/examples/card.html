@@ -3,22 +3,24 @@
         <form name="playGround">
             <!-- Холдеры -->
             <div ng-repeat="holder in placeHolders" class="card cardPlaceHolder"
-                 ng-class="getCardStyle(holder)"
+                 ng-class="getCardClass(holder)"
                  ng-click="putCardInPlaceholder(holder, getCardsCheckedAtTheMoment())">
                 <p>
                     {{holder.type}}<br>
                     {{holder.name}}<br>
+                    {{holder.layer}}<br>
                 </p>
             </div>
             <!-- Игральные карты -->
             <label ng-repeat="card in cards" id="playCard-{{$index}}" class="card"
-                   ng-class="getCardStyle(card)"
-                   ng-style="getCardPadding($index)" }>
+                   ng-class="getCardClass(card)"
+                   ng-style="getCardStyle($index, card)" }>
                 {{card.id}}<br>
                 {{card.type}}<br>
                 {{card.place}}<br>
                 {{card.checked}}<br>
-                {{card.holder}}
+                {{card.holder}}<br>
+
                 <input class="hidden" type="checkbox" ng-click="changeCheckState(card);"></input>
             </label>
         </form>
