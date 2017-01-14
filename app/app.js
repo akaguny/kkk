@@ -5,7 +5,8 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.card']).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+  // Префикс урлов
   $locationProvider.hashPrefix('!');
-
+  // Пр умолчанию переадресовывать на
   $routeProvider.otherwise({redirectTo: '/card'});
 }]);
