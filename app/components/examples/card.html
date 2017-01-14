@@ -1,10 +1,26 @@
-<p>Заготовка игрового поля</p>
 <div id="playTable">
-    <p class="text">Привет совсем новый, любимый, прекрасный мир!
-    <br>Интересно!</p>
-    <div ng-controller="GetCardsCtrl">
-    <ul>
-        <li ng-repeat="cards in cards" ng-click="showAlert($index);" class="playCard">{{cards.name}}</li>
-    </ul>
+    <div ng-controller="cardsCtrl">
+        <form name="playGround">
+            <!-- Холдеры -->
+            <div ng-repeat="holder in placeHolders" class="card cardPlaceHolder"
+                 ng-class="getCardStyle(holder)"
+                 ng-click="putCardInPlaceholder(holder, getCardsCheckedAtTheMoment())">
+                <p>
+                    {{holder.type}}<br>
+                    {{holder.name}}<br>
+                </p>
+            </div>
+            <!-- Игральные карты -->
+            <label ng-repeat="card in cards" id="playCard-{{$index}}" class="card"
+                   ng-class="getCardStyle(card)"
+                   ng-style="getCardPadding($index)" }>
+                {{card.id}}<br>
+                {{card.type}}<br>
+                {{card.place}}<br>
+                {{card.checked}}<br>
+                {{card.holder}}
+                <input class="hidden" type="checkbox" ng-click="changeCheckState(card);"></input>
+            </label>
+        </form>
     </div>
 </div>
