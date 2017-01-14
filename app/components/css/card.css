@@ -15,8 +15,6 @@
 }
 
 #playTable .playCard {
-    left: 270px;
-    top: 540px;
     border: solid 4px #111111;
     border-radius: 10px;
 }
