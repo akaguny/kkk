@@ -1,29 +1,57 @@
 /* app css stylesheet */
 
 #playTable {
-    height: 800px; /* Высота блока */
+    height: 898px; /* Высота блока */
     background: url(../img/gamePlace.jpg) 70% 70% no-repeat; /* Добавляем фон */
     background-size: cover; /* Масштабируем фон */
 }
 
-#playTable .text {
-    color: #8a4182;
-    display: block;
-    width: auto;
-    height: auto;
-    text-align: center;
-    vertical-align: middle;
-    border: solid #000000 1px;
-}
-
-#playTable .playCard {
+#playTable .card {
     display: block;
     width: 235px;
     height: 350px;
     background: #ffffff;
     position: absolute;
+}
+
+#playTable .playCard {
     left: 270px;
     top: 540px;
     border: solid 4px #111111;
     border-radius: 10px;
+}
+
+#playTable .playCardChecked {
+    border: solid 4px #008000;
+}
+
+#playTable .input {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#playTable .cardPlaceHolder {
+    opacity: 0.5;
+    border: solid 4px #111111;
+}
+
+#playTable .cardPlaceLeftHand {
+    left: 22px;
+    top: 117px;
+}
+
+#playTable .cardPlaceRightHand {
+    left: 269px;
+    top: 114px;
+}
+
+#playTable .cardPlaceTwoHand {
+    left: 147px;
+    top: 77px;
+}
+
+#playTable .cardsDeck {
+    left: 687px;
+    top: 117px;
 }
