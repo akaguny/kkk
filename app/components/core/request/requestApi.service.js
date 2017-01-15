@@ -12,6 +12,16 @@
     }
 
     /**
+     * Логин
+     */
+    this.login = function () {
+      $http.post('/server/api/public/' + 'login')
+        .then(function (data) {
+          $window.alert(data);
+        })
+    }
+
+    /**
      * Получение набор
      * @param {String} type
      */

@@ -13,17 +13,24 @@ function cardsCtrl(CardDataService, requestApi) {
   vm.changeCheckState = changeCheckState;
   vm.getCardClass = getCardClass;
   vm.getCardStyle = getCardStyle;
-  vm.cards = CardDataService.getPlayCards().slice();
 
   /**
    * Массив плейсхолдеров для карт
-   * @type {*[]}
    */
-  CardDataService.getHolders('placeholer')
+  CardDataService.getCards('placeholer')
       .then(function (data) {
         console.log(data);
         vm.placeHolders = data
-      });
+  });
+
+  /**
+   * Массив плейсхолдеров для карт
+   */
+  CardDataService.getCards('play')
+      .then(function (data) {
+        console.log(data);
+        vm.cards = data
+  });
 
   // Карты, выбранные в данный момент
   var cardsCheckedAtTheMoment = [];

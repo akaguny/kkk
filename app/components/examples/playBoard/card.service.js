@@ -7,25 +7,13 @@ angular
 
 function CardDataService(requestApi) {
   /**
-   * Получть игровые карты
-   * @return {object[]}
-   */
-  this.getPlayCards = function (){
-    return [
-      {type : "playCard", checked : false, holder: "cardsDeck"},
-      {type : "playCard", checked : false, holder: "cardsDeck"},
-      {type : "playCard", checked : false, holder: "cardsDeck"}
-    ]
-  }
-
-  /**
    * Получть холдеры
    * @return {object[]}
    */
-  this.getHolders=function (){
+  this.getCards=function (type){
     var cardholders = {};
 
-    return requestApi.getCards('placeholer')
+    return requestApi.getCards(type)
       .then(function (response) {
         cardholders = response.data;
       }).then(function () {
