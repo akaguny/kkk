@@ -3,6 +3,7 @@
   // Объявление всех необходимых зависимостей
   angular.module('myApp', [
     'boardGame.config',
-    'boardGame.card']);
+    'boardGame.card',
+    'boardGame.requestApi']);
 })();
 
