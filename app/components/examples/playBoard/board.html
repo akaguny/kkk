@@ -17,7 +17,7 @@
                 {{card.id}}<br>
                 {{card.type}}<br>
                 {{card.place}}<br>
-                {{card.checked}}<br>
+                {{card.checked || false}}<br>
                 {{card.holder}}<br>
 
                 <input class="hidden" type="checkbox" ng-click="vm.changeCheckState(card);"></input>

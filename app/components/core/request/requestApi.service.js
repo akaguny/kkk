@@ -29,7 +29,7 @@
       var response;
 
       // TODO: модифицировать API и передавать тип в качестве параметра GET
-      return this.sendRequest('get', '/server/api/public/' + type + 'cards')
+      return this.sendRequest('get', '/server/api/public/cards/'+type)
           .then(function (_response) {
             response = _response;
           })
