@@ -7,8 +7,9 @@
     $routeProvider.otherwise({redirectTo: '/card'});
 
     $routeProvider.when('/card', {
-      templateUrl: 'components/examples/board.html',
-      controller: 'cardsCtrl'
+      templateUrl: 'components/examples/playBoard/board.html',
+      controller: 'cardsCtrl',
+      controllerAs: 'vm'
     });
   }
 

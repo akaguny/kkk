@@ -5,7 +5,26 @@ angular
   // Логика, не связанная с представлением
   .controller('cardsCtrl', cardsCtrl);
 //TODO: разделить на 2 контроллера: placeHolderCardCtrl и playingCardCtrl
-function cardsCtrl($scope , CardDataService) {
+function cardsCtrl(CardDataService, requestApi) {
+
+  var vm = this;
+  vm.getCardsCheckedAtTheMoment = getCardsCheckedAtTheMoment;
+  vm.putCardInPlaceholder = putCardInPlaceholder;
+  vm.changeCheckState = changeCheckState;
+  vm.getCardClass = getCardClass;
+  vm.getCardStyle = getCardStyle;
+  vm.cards = CardDataService.getPlayCards().slice();
+
+  /**
+   * Массив плейсхолдеров для карт
+   * @type {*[]}
+   */
+  CardDataService.getHolders('placeholer')
+      .then(function (data) {
+        console.log(data);
+        vm.placeHolders = data
+      });
+
   // Карты, выбранные в данный момент
   var cardsCheckedAtTheMoment = [];
 
@@ -13,35 +32,22 @@ function cardsCtrl($scope , CardDataService) {
    * Получить карты, выбранные в данный момент
    * @return {Array}
    */
-  $scope.getCardsCheckedAtTheMoment = function () {
+  function getCardsCheckedAtTheMoment () {
     return cardsCheckedAtTheMoment;
   }
-
-  /**
-   * Массив карт
-   * @type {*[]}
-   */
-  $scope.cards = CardDataService.getPlayCards().slice();
-
-  /**
-   * Массив плейсхолдеров для карт
-   * @type {*[]}
-   */
-  $scope.placeHolders = CardDataService.getHolders().slice();
-
   /**
    * Переместить карту в плейсхолдер
    * @param {object} holder
    * @param {object[]} _cardsCheckedAtTheMoment
    */
-  $scope.putCardInPlaceholder = function (holder, _cardsCheckedAtTheMoment) {
+  function putCardInPlaceholder (holder, _cardsCheckedAtTheMoment) {
     var len = _cardsCheckedAtTheMoment.length;
     // Если есть выбранные карты
     if (len != 0){
       // Если их больше чем 1
       if (len > 1){
         _cardsCheckedAtTheMoment.forEach(function (item) {
-          $scope.putCardInPlaceholder(holder, [item]);
+          vm.putCardInPlaceholder(holder, [item]);
         })
       }
       // Поменять флаг "захолденности" (карта привязана к картхолдеру)
@@ -50,7 +56,7 @@ function cardsCtrl($scope , CardDataService) {
     }
     // Сбросить хранилище выбранных в текущий момент карт
     _cardsCheckedAtTheMoment.forEach(function (item) {
-      $scope.changeCheckState(item);
+      vm.changeCheckState(item);
     });
 
   }
@@ -59,10 +65,10 @@ function cardsCtrl($scope , CardDataService) {
    * Изменить статус выбора
    * @param {object} card
    */
-  $scope.changeCheckState = function (card) {
+  function changeCheckState (card) {
     card.checked = !card.checked;
     card.checked ? cardsCheckedAtTheMoment.push(card) :
-      cardsCheckedAtTheMoment.splice($scope.getCardsCheckedAtTheMoment().indexOf(card),1);
+      cardsCheckedAtTheMoment.splice(vm.getCardsCheckedAtTheMoment().indexOf(card),1);
   };
 
   /**
@@ -70,7 +76,7 @@ function cardsCtrl($scope , CardDataService) {
    * @param {object} card
    * @return {string}
    */
-  $scope.getCardClass = function (card) {
+  function getCardClass (card) {
     var cardStyle = '',
       checkedStyle = '';
 
@@ -92,7 +98,7 @@ function cardsCtrl($scope , CardDataService) {
    * @param {object} card
    * @return {{margin-left: string}}
    */
-  $scope.getCardStyle = function (currentCardIndex, card) {
+  function getCardStyle (currentCardIndex, card) {
     var style = {};
 
     if (card.holder === 'cardsDeck'){

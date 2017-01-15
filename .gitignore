@@ -5,7 +5,8 @@ bower_components/
 tmp
 .DS_Store
 .idea
-/server/
 Будет удалено app/components/extensions/
 Будет удалено app/components/templates/
 Будет удалено npm-debug.log
+Будет удалено server.iml
+/server/

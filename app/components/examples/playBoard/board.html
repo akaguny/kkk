@@ -1,0 +1,26 @@
+<div id="playTable">
+        <!-- Холдеры -->
+        <div ng-repeat="holder in vm.placeHolders" class="card cardPlaceHolder"
+             ng-class="vm.getCardClass(holder)"
+             ng-click="vm.putCardInPlaceholder(holder, vm.getCardsCheckedAtTheMoment())">
+            <p>
+                {{holder.type}}<br>
+                {{holder.name}}<br>
+                {{holder.layer}}<br>
+            </p>
+        </div>
+        <form name="playGround">
+            <!-- Игральные карты -->
+            <label ng-repeat="card in vm.cards" id="playCard-{{$index}}" class="card"
+                   ng-class="vm.getCardClass(card)"
+                   ng-style="vm.getCardStyle($index, card)" }>
+                {{card.id}}<br>
+                {{card.type}}<br>
+                {{card.place}}<br>
+                {{card.checked}}<br>
+                {{card.holder}}<br>
+
+                <input class="hidden" type="checkbox" ng-click="vm.changeCheckState(card);"></input>
+            </label>
+        </form>
+</div>

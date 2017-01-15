@@ -1,3 +1,4 @@
 (function () {
-  angular.module( 'boardGame.config', ['ngRoute'] );
+  angular
+    .module( 'boardGame.config', ['ngRoute'] )
 })();
