@@ -10,3 +10,5 @@ tmp
 Будет удалено npm-debug.log
 Будет удалено server.iml
 /server/
+/api/logs
+/api/src/key
