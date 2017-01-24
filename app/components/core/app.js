@@ -4,6 +4,7 @@
   angular.module('myApp', [
     'boardGame.config',
     'boardGame.card',
+    'boardGame.playRoomList',
     'boardGame.requestApi']);
 })();
 

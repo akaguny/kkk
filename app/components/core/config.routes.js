@@ -11,6 +11,12 @@
       controller: 'cardsCtrl',
       controllerAs: 'vm'
     });
+
+    $routeProvider.when('/playRoomList', {
+      templateUrl: 'components/examples/playRoomList/playRoomList.html',
+      controller: 'playRoomListCtrl',
+      controllerAs: 'vm'
+    });
   }
 
   // Конфиг выполняется на этапе инициализации
