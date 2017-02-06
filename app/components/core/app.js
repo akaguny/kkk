@@ -2,9 +2,11 @@
   'use strict';
   // Объявление всех необходимых зависимостей
   angular.module('myApp', [
+    'boardGame.requestApiMock',
     'boardGame.config',
     'boardGame.card',
     'boardGame.playRoomList',
-    'boardGame.requestApi']);
+    'boardGame.requestApi',
+    ]);
 })();
 
