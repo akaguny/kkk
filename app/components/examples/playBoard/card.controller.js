@@ -17,7 +17,7 @@ function cardsCtrl(CardDataService, requestApi) {
   /**
    * Массив плейсхолдеров для карт
    */
-  CardDataService.getCards('placeholer')
+  CardDataService.getCards('placeholder')
       .then(function (data) {
         console.log(data);
         vm.placeHolders = data
