@@ -23,4 +23,15 @@
                 <input class="hidden" type="checkbox" ng-click="vm.changeCheckState(card);"></input>
             </label>
         </form>
+    <div>
+        <textarea style="
+    z-index: 10;
+    position: absolute;
+    bottom: 10px;
+    width: 300px;
+    height: 200px;
+">
+        {{vm.cards | json}}
+        </textarea>
+    </div>
 </div>

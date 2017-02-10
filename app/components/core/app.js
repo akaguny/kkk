@@ -4,8 +4,10 @@
   angular.module('myApp', [
     'boardGame.requestApiMock',
     'boardGame.config',
-    'boardGame.card',
     'boardGame.playRoomList',
+    'boardGame.playRoom',
+    'boardGame.playBoard',
+    'boardGame.card',
     'boardGame.requestApi',
     ]);
 })();

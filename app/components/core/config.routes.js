@@ -7,14 +7,26 @@
     $routeProvider.otherwise({redirectTo: '/card'});
 
     $routeProvider.when('/card', {
-      templateUrl: 'components/examples/playBoard/board.html',
+      templateUrl: 'components/examples/playCard/card.html',
       controller: 'cardsCtrl',
+      controllerAs: 'vm'
+    });
+
+    $routeProvider.when('/playRoom', {
+      templateUrl: 'components/examples/playRoom/playRoom.html',
+      controller: 'playRoomCtrl',
       controllerAs: 'vm'
     });
 
     $routeProvider.when('/playRoomList', {
       templateUrl: 'components/examples/playRoomList/playRoomList.html',
       controller: 'playRoomListCtrl',
+      controllerAs: 'vm'
+    });
+
+    $routeProvider.when('/playBoard', {
+      templateUrl: 'components/examples/playCard/card.html',
+      controller: 'playBoardCtrl',
       controllerAs: 'vm'
     });
   }
