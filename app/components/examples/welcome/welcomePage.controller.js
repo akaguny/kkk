@@ -7,7 +7,7 @@ angular
 
 function welcomePageCtrl() {
   var vm = this,
-    userState;
+      userState;
 
   //Маппинг функций, доступных из отображения на функции контроллера
   vm.getUserState = getUserState;
@@ -17,6 +17,6 @@ function welcomePageCtrl() {
 
   function getUserState() {
     return userState;
-  };
+  }
 
 }

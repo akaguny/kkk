@@ -10,6 +10,6 @@
     'boardGame.card',
     'boardGame.requestApi',
     'boardGame.welcomePage'
-    ]);
+  ]);
 })();
 

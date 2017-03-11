@@ -3,7 +3,7 @@
 angular
   .module('boardGame.playRoomList')
   // Логика, не связанная с представлением
-  .service('playRoomListDataService', playRoomListDataService)
+  .service('playRoomListDataService', playRoomListDataService);
 
 function playRoomListDataService(requestApi) {
   /**
@@ -17,8 +17,8 @@ function playRoomListDataService(requestApi) {
       .then(function (response) {
         cardholders = response.data;
       }).then(function () {
-      return cardholders;
-    });
-  }
+        return cardholders;
+      });
+  };
 }
 

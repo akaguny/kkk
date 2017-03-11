@@ -3,7 +3,7 @@
 angular
   .module('boardGame.playBoard')
   // Логика, не связанная с представлением
-  .service('playBoardService', playBoardService)
+  .service('playBoardService', playBoardService);
 
 function playBoardService() {
 }

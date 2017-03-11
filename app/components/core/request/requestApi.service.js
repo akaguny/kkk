@@ -8,8 +8,8 @@
       $http.get('/server/api/public/' + 'is_login')
         .success(function (data) {
           $window.alert(data);
-        })
-    }
+        });
+    };
 
     /**
      * Логин
@@ -18,8 +18,8 @@
       $http.post('/server/api/public/' + 'login')
         .then(function (data) {
           $window.alert(data);
-        })
-    }
+        });
+    };
 
     /**
      * Получение набор
@@ -36,7 +36,7 @@
         .then(function () {
           return response;
         });
-      };
+    };
 
     /**
      * Отправка запроса
@@ -62,9 +62,9 @@
 
       return request.then(function (response) {
         return response;
-      })
+      });
 
-    }
+    };
   }
 
   angular

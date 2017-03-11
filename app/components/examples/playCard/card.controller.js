@@ -23,7 +23,7 @@ function cardsCtrl(CardDataService, requestApi) {
       .then(function (data) {
         console.log(data);
         vm.placeHolders = data;
-  });
+      });
 
   /**
    * Массив плейсхолдеров для карт
@@ -32,7 +32,7 @@ function cardsCtrl(CardDataService, requestApi) {
       .then(function (data) {
         console.log(data);
         vm.cards = data;
-  });
+      });
 
   // Карты, выбранные в данный момент
   var cardsCheckedAtTheMoment = [];
@@ -53,6 +53,7 @@ function cardsCtrl(CardDataService, requestApi) {
   function putCardInPlaceholder (holder, _cardsCheckedAtTheMoment) {
     var len = _cardsCheckedAtTheMoment.length;
     // Если есть выбранные карты
+
     if (len !== 0){
       // Если их больше чем 1
       if (len > 1){
@@ -78,8 +79,8 @@ function cardsCtrl(CardDataService, requestApi) {
   function changeCheckState (card) {
     card.checked = !card.checked;
     card.checked ? cardsCheckedAtTheMoment.push(card) :
-      cardsCheckedAtTheMoment.splice(vm.getCardsCheckedAtTheMoment().indexOf(card),1);
-  };
+      cardsCheckedAtTheMoment.splice(vm.getCardsCheckedAtTheMoment().indexOf(card), 1);
+  }
 
   /**
    * Вычисляет стиль
@@ -88,19 +89,18 @@ function cardsCtrl(CardDataService, requestApi) {
    */
   function getCardClass (card) {
     var cardStyle = '',
-      checkedStyle = '';
+        checkedStyle = '';
 
     if (card.type === 'playCard'){
       cardStyle += 'playCard ';
       checkedStyle = card.checked ? 'playCard playCardChecked' : 'playCard';
       cardStyle += checkedStyle + ' ' + card.holder;
-    }
-    else{
+    } else {
       cardStyle += card.name;
     }
 
     return cardStyle;
-  };
+  }
 
   /**
    * Получить отступ карты
@@ -113,10 +113,9 @@ function cardsCtrl(CardDataService, requestApi) {
 
     if (card.holder === 'cardsDeck'){
       style = {'margin-left' : 5 * currentCardIndex + 'px'};
-    }
-    else {
-      style = {'z-index' : card.layer}
+    } else {
+      style = {'z-index' : card.layer};
     }
     return style;
-  };
+  }
 }

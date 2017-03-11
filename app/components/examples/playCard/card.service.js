@@ -3,7 +3,7 @@
 angular
   .module('boardGame.card')
   // Логика, не связанная с представлением
-  .service('CardDataService', CardDataService)
+  .service('CardDataService', CardDataService);
 
 function CardDataService(requestApi) {
   /**
@@ -17,8 +17,8 @@ function CardDataService(requestApi) {
       .then(function (response) {
         cardholders = response.data;
       }).then(function () {
-      return cardholders;
-    });
+        return cardholders;
+      });
 
     // return [
     //   {type : "placeHolder", name: "cardPlaceLeftHand",layer: 0},
@@ -26,6 +26,6 @@ function CardDataService(requestApi) {
     //   {type : "placeHolder", name: "cardPlaceTwoHand",layer:1},
     //   {type : "placeHolder", name: "cardsDeck",layer: 0}
     // ]
-  }
+  };
 }
 

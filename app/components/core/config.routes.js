@@ -39,5 +39,5 @@
 
   // Конфиг выполняется на этапе инициализации
   angular.module( 'boardGame.config')
-    .config( configRoutes )
+    .config( configRoutes );
 })();
