@@ -4,7 +4,7 @@
     // Префикс урлов
     $locationProvider.hashPrefix('!');
     // Пр умолчанию переадресовывать на
-    $routeProvider.otherwise({redirectTo: '/card'});
+    $routeProvider.otherwise({redirectTo: '/welcomePage'});
 
     $routeProvider.when('/card', {
       templateUrl: 'components/examples/playCard/card.html',
@@ -27,6 +27,12 @@
     $routeProvider.when('/playBoard', {
       templateUrl: 'components/examples/playCard/card.html',
       controller: 'playBoardCtrl',
+      controllerAs: 'vm'
+    });
+
+    $routeProvider.when('/welcomePage', {
+      templateUrl: 'components/examples/welcome/welcomePage.html',
+      controller: 'welcomePageCtrl',
       controllerAs: 'vm'
     });
   }

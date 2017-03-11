@@ -1,0 +1,53 @@
+<div id="welcome-page">
+    <div class="container">
+        <div class="signin-card signin-card-container">
+            <textarea>{{userState}}</textarea>
+            <form class="form-signin" ng-switch="userState">
+                <div ng-switch-when="playing">
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Продолжить</button>
+                </div>
+                <div ng-switch-when="entered">
+                    <input type="text" id="inputInvite" class="form-control" placeholder="КОД приглашения" required
+                           autofocus>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Войти</button>
+                </div>
+                <div ng-switch-default>
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required
+                           autofocus>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <div id="remember" class="checkbox">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Войти</button>
+                    <a href="#" class="forgot-password">
+                        Забыли пароль?
+                    </a>
+                </div>
+            </form><!-- /form -->
+        </div><!-- /card-container -->
+    </div>
+    <div style="
+    z-index: 10;
+    position: absolute;
+    bottom: 10px;
+    width: 300px;
+    height: 200px;
+    padding: 10px;
+    ">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="sel1">Состояние входа пользователя</label>
+                    <select class="form-control" id="sel1" ng-model="userState">
+                        <option value="entered">entered</option>
+                        <option value="playing">playing</option>
+                        <option value="any">any</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
