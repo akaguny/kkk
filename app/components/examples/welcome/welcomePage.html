@@ -1,15 +1,16 @@
+<!--Код формы взят с http://bootsnipp.com/snippets/featured/google-style-login-extended-with-html5-localstorage-->
 <div id="welcome-page">
     <div class="container">
         <div class="signin-card signin-card-container">
-            <textarea>{{userState}}</textarea>
-            <form class="form-signin" ng-switch="userState">
+            <textarea>userState = {{vm.userState}}</textarea>
+            <form class="form-signin" ng-switch="vm.userState">
                 <div ng-switch-when="playing">
                     <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Продолжить</button>
                 </div>
                 <div ng-switch-when="entered">
                     <input type="text" id="inputInvite" class="form-control" placeholder="КОД приглашения" required
                            autofocus>
-                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Войти</button>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Присоединиться</button>
                 </div>
                 <div ng-switch-default>
                     <span id="reauth-email" class="reauth-email"></span>
@@ -41,7 +42,7 @@
             <div class="panel-body">
                 <div class="form-group">
                     <label for="sel1">Состояние входа пользователя</label>
-                    <select class="form-control" id="sel1" ng-model="userState">
+                    <select class="form-control" id="sel1" ng-model="vm.userState">
                         <option value="entered">entered</option>
                         <option value="playing">playing</option>
                         <option value="any">any</option>

@@ -7,10 +7,11 @@ angular
 
 function welcomePageCtrl() {
   var vm = this,
-      userState;
+      userState = 'any';
 
   //Маппинг функций, доступных из отображения на функции контроллера
   vm.getUserState = getUserState;
+  vm.userState = userState;
 
   //Локальные переменные
   vm.userState = userState;
