@@ -1,5 +1,5 @@
 (function () {
-  function requestApi($http,$window) {
+  function requestApi($http, $window) {
 
     /**
      * Логин
@@ -34,8 +34,8 @@
             response = _response;
           })
         .then(function () {
-          return response
-        })
+          return response;
+        });
       };
 
     /**

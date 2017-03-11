@@ -8,6 +8,8 @@ angular
 function cardsCtrl(CardDataService, requestApi) {
 
   var vm = this;
+
+  //Маппинг функций, доступных из отображения на функции контроллера
   vm.getCardsCheckedAtTheMoment = getCardsCheckedAtTheMoment;
   vm.putCardInPlaceholder = putCardInPlaceholder;
   vm.changeCheckState = changeCheckState;
@@ -20,7 +22,7 @@ function cardsCtrl(CardDataService, requestApi) {
   CardDataService.getCards('placeholder')
       .then(function (data) {
         console.log(data);
-        vm.placeHolders = data
+        vm.placeHolders = data;
   });
 
   /**
@@ -29,7 +31,7 @@ function cardsCtrl(CardDataService, requestApi) {
   CardDataService.getCards('play')
       .then(function (data) {
         console.log(data);
-        vm.cards = data
+        vm.cards = data;
   });
 
   // Карты, выбранные в данный момент
@@ -42,6 +44,7 @@ function cardsCtrl(CardDataService, requestApi) {
   function getCardsCheckedAtTheMoment () {
     return cardsCheckedAtTheMoment;
   }
+
   /**
    * Переместить карту в плейсхолдер
    * @param {object} holder
@@ -50,12 +53,12 @@ function cardsCtrl(CardDataService, requestApi) {
   function putCardInPlaceholder (holder, _cardsCheckedAtTheMoment) {
     var len = _cardsCheckedAtTheMoment.length;
     // Если есть выбранные карты
-    if (len != 0){
+    if (len !== 0){
       // Если их больше чем 1
       if (len > 1){
         _cardsCheckedAtTheMoment.forEach(function (item) {
           vm.putCardInPlaceholder(holder, [item]);
-        })
+        });
       }
       // Поменять флаг "захолденности" (карта привязана к картхолдеру)
       _cardsCheckedAtTheMoment[0].holder = holder.name;
@@ -88,7 +91,7 @@ function cardsCtrl(CardDataService, requestApi) {
       checkedStyle = '';
 
     if (card.type === 'playCard'){
-      cardStyle += 'playCard '
+      cardStyle += 'playCard ';
       checkedStyle = card.checked ? 'playCard playCardChecked' : 'playCard';
       cardStyle += checkedStyle + ' ' + card.holder;
     }
