@@ -1,31 +1,15 @@
 (function () {
   function requestApi($http, $window) {
 
-    /**
-     * Логин
-     */
-    this.isLogin = function () {
-      $http.get('/server/api/public/' + 'is_login')
-        .success(function (data) {
-          $window.alert(data);
-        });
-    };
+    this.getCards = getCards;
+    this.sendRequest = sendRequest;
 
-    /**
-     * Логин
-     */
-    this.login = function () {
-      $http.post('/server/api/public/' + 'login')
-        .then(function (data) {
-          $window.alert(data);
-        });
-    };
-
-    /**
+      /**
      * Получение набор
-     * @param {String} type
+     * @param {String} type тип карточки
+     * @return {Promise<JSON>}
      */
-    this.getCards = function (type) {
+    function getCards(type) {
       var response;
 
       // TODO: модифицировать API и передавать тип в качестве параметра GET
@@ -36,7 +20,7 @@
         .then(function () {
           return response;
         });
-    };
+    }
 
     /**
      * Отправка запроса
@@ -46,7 +30,7 @@
      * @param data
      * @return {*|wdpromise.Promise<any>|!webdriver.promise.Promise}
      */
-    this.sendRequest = function (type, request, config, data) {
+    function sendRequest(type, request, config, data) {
       var request;
 
       switch (type){
@@ -64,7 +48,7 @@
         return response;
       });
 
-    };
+    }
   }
 
   angular
