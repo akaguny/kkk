@@ -5,7 +5,7 @@ angular
   // Логика, не связанная с представлением
   .controller('cardsCtrl', cardsCtrl);
 //TODO: разделить на 2 контроллера: placeHolderCardCtrl и playingCardCtrl
-function cardsCtrl(CardDataService, requestApi) {
+function cardsCtrl(CardDataService) {
 
   var vm = this;
 

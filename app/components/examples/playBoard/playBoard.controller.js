@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('boardGame.card')
+  .module('boardGame.playBoard')
   // Логика, не связанная с представлением
   .controller('playBoardCtrl', playBoardCtrl);
 function playBoardCtrl() {
