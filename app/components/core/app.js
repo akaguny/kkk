@@ -9,6 +9,7 @@
     'boardGame.playBoard',
     'boardGame.card',
     'boardGame.requestApi',
+    'boardGame.userApi',
     'boardGame.welcomePage'
   ]);
 })();
