@@ -41,10 +41,18 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="form-group">
-                    <label for="sel1">Состояние входа пользователя</label>
-                    <select class="form-control" id="sel1" ng-model="vm.userState">
+                    <label for="sel1">Пользователь</label>
+                    <select class="form-control" id="sel1" ng-change="vm.updateUserState(vm.user)" ng-model="vm.user">
+                        <option value="user1-entered">user1-entered</option>
+                        <option value="user2-played">user2-played</option>
+                        <option value="user3-any">user3-any</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sel2">Состояние входа пользователя</label>
+                    <select class="form-control" id="sel2" ng-model="vm.userState">
                         <option value="entered">entered</option>
-                        <option value="playing">playing</option>
+                        <option value="played">played</option>
                         <option value="any">any</option>
                     </select>
                 </div>

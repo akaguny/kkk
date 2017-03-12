@@ -1,5 +1,5 @@
 (function () {
   'use strict';
 
-  angular.module('boardGame.welcomePage', []);
+  angular.module('boardGame.welcomePage', ['boardGame.userApi']);
 })();

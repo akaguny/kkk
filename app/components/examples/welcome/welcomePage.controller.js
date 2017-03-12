@@ -5,19 +5,30 @@ angular
   // Логика, не связанная с представлением
   .controller('welcomePageCtrl', welcomePageCtrl);
 
-function welcomePageCtrl() {
-  var vm = this,
-      userState = 'any';
+function welcomePageCtrl(userApiService) {
+  var vm = this;
 
   //Маппинг функций, доступных из отображения на функции контроллера
-  vm.getUserState = getUserState;
-  vm.userState = userState;
-
+  vm.updateUserState = updateUserState;
   //Локальные переменные
-  vm.userState = userState;
+  vm.userState;
+  vm.user;
 
-  function getUserState() {
-    return userState;
+  /**
+   * Получить состояние пользователя
+   * @return {string} user имя
+   */
+  function updateUserState(user) {
+    userApiService.getUserState(user).then(function (_userState) {
+      vm.userState = _userState.data["0"].status;
+      console.log(vm.userState);
+    });
   }
+
+  (function () {
+    // Значение при инициализации
+    vm.user = 'user1-entered';
+    updateUserState('user1-entered');
+  })();
 
 }
