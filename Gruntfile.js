@@ -36,12 +36,23 @@ function gruntConfig(grunt) {
         files: [ 'Gruntfile.js', 'config/*.js' ],
         reload: true
       }
+    },
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js'
+      },
+      continuous: {
+        configFile: 'karma.conf.js',
+        singleRun: true,
+        browsers: ['PhantomJS']
+      }
     }
   });
 // region регистрация тасков
 // region загрузка тасков
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-karma');
 // endregion загрузка тасков
   grunt.registerTask('livereload', ['connect', 'watch']);
 // endregion регистрация тасков
