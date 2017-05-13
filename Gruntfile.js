@@ -35,6 +35,10 @@ function gruntConfig(grunt) {
       config: {
         files: [ 'Gruntfile.js', 'config/*.js' ],
         reload: true
+      },
+      lib: {
+        files: ['node_modules/**/*.*', 'app/bower_components/**/*.*'],
+        reload: false
       }
     },
     karma: {
