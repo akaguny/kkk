@@ -1,83 +1,48 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="components/css/card.css">
-  <link rel="stylesheet" href="components/css/playRoomList.css">
-  <link rel="stylesheet" href="components/css/welcome.css">
-  <link rel="stylesheet" href="components/core/app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="components/css/card.css">
+    <link rel="stylesheet" href="components/css/playRoomList.css">
+    <link rel="stylesheet" href="components/css/welcome.css">
+    <link rel="stylesheet" href="components/core/app.css">
+    <style>
+        [ng-cloak] {
+            display: none;
+        }
+    </style>
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
-  <ul class="menu">
+<body ng-cloak>
+<ul class="menu">
     <li><a href="#!/welcomePage">welcome page</a></li>
     <li><a href="#!/card">card example</a></li>
     <li><a href="#!/playRoomList">playRoomList example</a></li>
     <li><a href="#!/playRoom">playRoom example</a></li>
     <li><a href="#!/playBoard">playBoard example</a></li>
-  </ul>
+</ul>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
 
-  <div ng-view></div>
+<div ng-view></div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-mocks/angular-mocks.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!--card-->
-  <script src="components/examples/playCard/card.config.js"></script>
-  <script src="components/examples/playCard/card.service.js"></script>
-  <script src="components/examples/playCard/card.controller.js"></script>
-  <!--playBoard-->
-  <script src="components/examples/playBoard/playBoard.config.js"></script>
-  <script src="components/examples/playBoard/playBoard.service.js"></script>
-  <script src="components/examples/playBoard/playBoard.controller.js"></script>
-  <!--playRoom-->
-  <script src="components/examples/playRoom/playRoom.config.js"></script>
-  <script src="components/examples/playRoom/playRoom.service.js"></script>
-  <script src="components/examples/playRoom/playRoom.controller.js"></script>
-  <!--playRoomList-->
-  <script src="components/examples/playRoomList/playRoomList.config.js"></script>
-  <script src="components/examples/playRoomList/playRoomList.service.js"></script>
-  <script src="components/examples/playRoomList/playRoomList.controller.js"></script>
-  <!--config-->
-  <script src="components/core/config.module.js"></script>
-  <script src="components/core/config.routes.js"></script>
-  <!--API start-->
-  <!--requestApi-->
-  <script src="components/core/request/requestApi.module.js"></script>
-  <script src="components/core/request/requestApi.config.js"></script>
-  <script src="components/core/request/requestApi.service.js"></script>
-  <!--userApi-->
-  <script src="components/core/user/userApi.module.js"></script>
-  <script src="components/core/user/userApi.config.js"></script>
-  <script src="components/core/user/userApi.service.js"></script>
-  <!--requestApiMock-->
-  <script src="components/core/requestMock/requestApiMock.module.js"></script>
-  <script src="components/core/requestMock/requestApiMock.run.js"></script>
-  <!--end API-->
-  <!--app-->
-  <script src="components/core/app.js"></script>
-  <!--welcomePage-->
-  <script src="components/examples/welcome/welcomePage.config.js"></script>
-  <script src="components/examples/welcome/welcomePage.service.js"></script>
-  <script src="components/examples/welcome/welcomePage.controller.js"></script>
-
+<script data-main="require.config" src="bower_components/requirejs/require.js"></script>
 </body>
 </html>

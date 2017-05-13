@@ -1,5 +1,14 @@
-( function () {
-  'use strict';
+'use strict';
+define(['angular', 'angularRoute'], function (angular, angularRoute) {
+  // Конфиг выполняется на этапе инициализации
+  return angular.module( 'boardGame.config')
+    .config(['$locationProvider', '$routeProvider'], configRoutes );
+
+  /**
+   * Конфигурация роутинга
+   * @param {Object} $locationProvider - провайдер, отвечающий за URL
+   * @param {Object} $routeProvider - провайдер, непосредственно отвечающий за роутинг
+   */
   function configRoutes($locationProvider, $routeProvider) {
     // Префикс урлов
     $locationProvider.hashPrefix('!');
@@ -36,8 +45,4 @@
       controllerAs: 'vm'
     });
   }
-
-  // Конфиг выполняется на этапе инициализации
-  angular.module( 'boardGame.config')
-    .config( configRoutes );
-})();
+});
