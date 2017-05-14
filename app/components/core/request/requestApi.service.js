@@ -1,4 +1,4 @@
-define(['./requestApi.config', './requestApi.service'],function () {
+define([],function () {
 
   function requestApi($http, $window) {
 
@@ -52,8 +52,6 @@ define(['./requestApi.config', './requestApi.service'],function () {
     }
   }
 
-  angular
-    .module( 'boardGame.requestApi', [])
-    .service('requestApi', requestApi );
+  return requestApi;
 
 });

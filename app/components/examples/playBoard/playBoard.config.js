@@ -1,4 +1,4 @@
-define(['./requestApi.config', './requestApi.service'],function () {
+define(['components/core/request/requestApi.module'],function () {
 
   'use strict';
 

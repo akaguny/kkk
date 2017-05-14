@@ -1,4 +1,4 @@
-define(['./requestApi.config', './requestApi.service'],function () {
+define(['angular'],function (angular) {
 
   angular
     .module( 'boardGame.requestApi');

@@ -26,14 +26,26 @@ require.config({
     angularRoute : 'bower_components/angular-route/angular-route',
     angularMocks : 'bower_components/angular-mocks/angular-mocks',
     text : 'bower_components/text/text'
-  }
+  },
+  shim: {
+    'angular' : {'exports' : 'angular'},
+    'angularRoute': ['angular'],
+    'angularMocks': {
+      deps:['angular'],
+      'exports':'angular.mock'
+    }
+  },
+  priority: [
+    "angular"
+  ]
 });
 
 // Инициализация приложения
 require([
+  'angular',
   'components/core/app',
   'components/core/config.module'
-], function() {
+], function(angular, app) {
   var $html = angular.element(document.getElementsByTagName('html')[0]);
 
   angular.element().ready(function() {
