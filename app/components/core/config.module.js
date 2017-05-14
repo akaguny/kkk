@@ -1,3 +1,3 @@
-define(['angular', 'angularRoute'], function (angular) {
+define(['angular', 'angularRoute'], function () {
   angular.module( 'boardGame.config', ['ngRoute'] );
 });

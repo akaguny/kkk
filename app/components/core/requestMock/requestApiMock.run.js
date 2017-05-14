@@ -1,4 +1,5 @@
-( function () {
+define(['./requestApi.config', './requestApi.service'],function () {
+
   'use strict';
 
   function requestApiMocksRun($httpBackend) {
@@ -36,4 +37,5 @@
   // Конфиг выполняется на этапе инициализации
   angular.module( 'boardGame.requestApiMock')
     .run( requestApiMocksRun );
-})();
+
+});

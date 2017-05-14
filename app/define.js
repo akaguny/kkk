@@ -1,7 +1,7 @@
-define('boardGame', 'app.js');
-define('boardGame.config', 'config.module.js');
+// define('boardGame', 'components/core/app');
+// define('boardGame.config', 'components/core/config.module');
 
-require('requestMock/define.js');
+// require('requestMock/define.js');
 // 'boardGame.requestApiMock',
 //   'boardGame.config',
 //   'boardGame.playRoomList',

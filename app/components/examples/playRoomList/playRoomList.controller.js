@@ -1,3 +1,4 @@
+define(['./requestApi.config', './requestApi.service'],function () {
 'use strict';
 
 angular
@@ -7,3 +8,4 @@ angular
 function playRoomListCtrl(playRoomListDataService, requestApi) {
 
 }
+})

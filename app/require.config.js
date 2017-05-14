@@ -19,42 +19,21 @@
   }
 })();
 
-
 // Configuration Options
 require.config({
   paths : {
-    definejs: 'define',
     angular : 'bower_components/angular/angular',
     angularRoute : 'bower_components/angular-route/angular-route',
     angularMocks : 'bower_components/angular-mocks/angular-mocks',
     text : 'bower_components/text/text'
   }
-  // },
-  // // shim: makes external libraries reachable
-  // shim : {
-  //   angular : {
-  //     exports : 'angular'
-  //   },
-  //   angularRoute : ['angular'],
-  //   angularMocks : {
-  //     deps : ['angular'],
-  //     exports : 'angular.mock'
-  //   },
-  //   priority: [
-  //     'angular'
-  //   ],
-  //   deps: window.__karma__ ? allTestFiles : [],
-  //   callback: window.__karma__ ? window.__karma__.start : null,
-  //   baseUrl: window.__karma__ ? '/base/app' : ''
-  // }
 });
 
 // Инициализация приложения
 require([
-  'definejs',
-  'angular',
-  'boardGame'
-], function(angular, app) {
+  'components/core/app',
+  'components/core/config.module'
+], function() {
   var $html = angular.element(document.getElementsByTagName('html')[0]);
 
   angular.element().ready(function() {

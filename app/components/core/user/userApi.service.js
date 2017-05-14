@@ -1,4 +1,5 @@
-(function () {
+define(['./requestApi.config', './requestApi.service'],function () {
+
   function user(requestApi) {
     var that = this;
 
@@ -34,4 +35,5 @@
   angular
     .module('boardGame.userApi', [])
     .service('userApiService', user);
-})();
+
+});

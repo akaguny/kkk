@@ -1,10 +1,12 @@
-'use strict';
+define(['./requestApi.config', './requestApi.service'],function () {
+  'use strict';
 
-angular
-  .module('boardGame.playBoard')
-  // Логика, не связанная с представлением
-  .service('playBoardService', playBoardService);
+  angular
+    .module('boardGame.playBoard')
+    // Логика, не связанная с представлением
+    .service('playBoardService', playBoardService);
 
-function playBoardService() {
-}
+  function playBoardService() {
+  }
 
+});

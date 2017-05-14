@@ -1,4 +1,5 @@
-(function () {
+define(['./requestApi.config', './requestApi.service'],function () {
+
   function requestApi($http, $window) {
 
     this.getCards = getCards;
@@ -54,4 +55,5 @@
   angular
     .module( 'boardGame.requestApi', [])
     .service('requestApi', requestApi );
-})();
+
+});
