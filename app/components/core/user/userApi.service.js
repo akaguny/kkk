@@ -1,4 +1,4 @@
-define([],function () {
+define([], function () {
 
   function user(requestApi) {
     var that = this;

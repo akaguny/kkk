@@ -1,9 +1,8 @@
 'use strict';
-define(['angular', 'angularRoute'], function (angular, angularRoute) {
-  // Конфиг выполняется на этапе инициализации
-  return angular.module( 'boardGame.config')
-    .config(['$locationProvider', '$routeProvider'], configRoutes );
+define(['angular'], function (angular) {
 
+
+  // angular.$inject(['$locationProvider', '$routeProvider']);
   /**
    * Конфигурация роутинга
    * @param {Object} $locationProvider - провайдер, отвечающий за URL
@@ -20,29 +19,31 @@ define(['angular', 'angularRoute'], function (angular, angularRoute) {
       controller: 'cardsCtrl',
       controllerAs: 'vm'
     });
-    //
-    // $routeProvider.when('/playRoom', {
-    //   templateUrl: 'components/examples/playRoom/playRoom.html',
-    //   controller: 'playRoomCtrl',
-    //   controllerAs: 'vm'
-    // });
-    //
-    // $routeProvider.when('/playRoomList', {
-    //   templateUrl: 'components/examples/playRoomList/playRoomList.html',
-    //   controller: 'playRoomListCtrl',
-    //   controllerAs: 'vm'
-    // });
-    //
-    // $routeProvider.when('/playBoard', {
-    //   templateUrl: 'components/examples/playCard/card.html',
-    //   controller: 'playBoardCtrl',
-    //   controllerAs: 'vm'
-    // });
-    //
-    // $routeProvider.when('/welcomePage', {
-    //   templateUrl: 'components/examples/welcome/welcomePage.html',
-    //   controller: 'welcomePageCtrl',
-    //   controllerAs: 'vm'
-    // });
+
+    $routeProvider.when('/playRoom', {
+      templateUrl: 'components/examples/playRoom/playRoom.html',
+      controller: 'playRoomCtrl',
+      controllerAs: 'vm'
+    });
+
+    $routeProvider.when('/playRoomList', {
+      templateUrl: 'components/examples/playRoomList/playRoomList.html',
+      controller: 'playRoomListCtrl',
+      controllerAs: 'vm'
+    });
+
+    $routeProvider.when('/playBoard', {
+      templateUrl: 'components/examples/playCard/card.html',
+      controller: 'playBoardCtrl',
+      controllerAs: 'vm'
+    });
+
+    $routeProvider.when('/welcomePage', {
+      templateUrl: 'components/examples/welcome/welcomePage.html',
+      controller: 'welcomePageCtrl',
+      controllerAs: 'vm'
+    });
   }
+
+  return configRoutes;
 });

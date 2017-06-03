@@ -1,10 +1,5 @@
-define([],function () {
+define([], function () {
   'use strict';
-
-  angular
-    .module('boardGame.playRoomList')
-    // Логика, не связанная с представлением
-    .service('playRoomListDataService', playRoomListDataService);
 
   function playRoomListDataService(requestApi) {
     /**
@@ -23,4 +18,5 @@ define([],function () {
     };
   }
 
-})
+  return playRoomListDataService;
+});

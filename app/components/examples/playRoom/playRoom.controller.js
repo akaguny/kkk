@@ -1,10 +1,13 @@
-define([],function () {
+define([], function () {
   'use strict';
 
-  angular
-    .module('boardGame.card')
-    // Логика, не связанная с представлением
-    .controller('playRoomCtrl', playRoomCtrl);
   function playRoomCtrl() {
+
+    var vm = this;
+
+    vm.header = 'playRoom';
+
   }
-})
+
+  return playRoomCtrl;
+});

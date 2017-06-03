@@ -1,12 +1,8 @@
-define(['./requestApi.config', './requestApi.service'],function () {
+define(['requestApi'], function () {
   'use strict';
-
-  angular
-    .module('boardGame.playBoard')
-    // Логика, не связанная с представлением
-    .service('playBoardService', playBoardService);
 
   function playBoardService() {
   }
 
+  return playBoardService;
 });

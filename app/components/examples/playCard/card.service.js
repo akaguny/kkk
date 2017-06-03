@@ -1,10 +1,5 @@
-define(['components/core/request/requestApi.module'],function () {
+define([], function () {
   'use strict';
-
-  angular
-    .module('boardGame.card')
-    // Логика, не связанная с представлением
-    .service('CardDataService', CardDataService);
 
   function CardDataService(requestApi) {
     /**
@@ -30,4 +25,5 @@ define(['components/core/request/requestApi.module'],function () {
     };
   }
 
-})
+  return CardDataService;
+});

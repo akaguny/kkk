@@ -1,11 +1,7 @@
-define(['./card.config'],function () {
+define([], function () {
   'use strict';
 
-  angular
-    .module('boardGame.card')
-    // Логика, не связанная с представлением
-    .controller('cardsCtrl', cardsCtrl);
-//TODO: разделить на 2 контроллера: placeHolderCardCtrl и playingCardCtrl
+  //TODO: разделить на 2 контроллера: placeHolderCardCtrl и playingCardCtrl
   function cardsCtrl(CardDataService) {
 
     var vm = this;
@@ -91,7 +87,7 @@ define(['./card.config'],function () {
      */
     function getCardClass(card) {
       var cardStyle = '',
-        checkedStyle = '';
+          checkedStyle = '';
 
       if (card.type === 'playCard') {
         cardStyle += 'playCard ';
@@ -123,4 +119,6 @@ define(['./card.config'],function () {
       return style;
     }
   }
-})
+
+  return cardsCtrl;
+});

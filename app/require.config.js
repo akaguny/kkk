@@ -20,36 +20,40 @@
 })();
 
 // Configuration Options
-require.config({
+requirejs.config({
   paths : {
     angular : 'bower_components/angular/angular',
     angularRoute : 'bower_components/angular-route/angular-route',
     angularMocks : 'bower_components/angular-mocks/angular-mocks',
-    text : 'bower_components/text/text'
+    text : 'bower_components/text/text',
+    app : 'components/core/app'
   },
   shim: {
     'angular' : {'exports' : 'angular'},
     'angularRoute': ['angular'],
+    'exports':'angular.route',
     'angularMocks': {
       deps:['angular'],
       'exports':'angular.mock'
+    },
+    'app' : {
+      deps:['angular']
     }
   },
   priority: [
-    "angular"
+    'angular'
   ]
 });
 
 // Инициализация приложения
-require([
+requirejs([
   'angular',
-  'components/core/app',
-  'components/core/config.module'
-], function(angular, app) {
+  'app'
+], function(angular) {
   var $html = angular.element(document.getElementsByTagName('html')[0]);
 
   angular.element().ready(function() {
-      // bootstrap the app manually
+    // bootstrap the app manually
     angular.bootstrap(document, ['myApp']);
   });
 }

@@ -1,10 +1,5 @@
-define(['./requestApi.config', './requestApi.service'],function () {
+define([], function () {
   'use strict';
-
-  angular
-    .module('boardGame.card')
-    // Логика, не связанная с представлением
-    .controller('welcomePageCtrl', welcomePageCtrl);
 
   function welcomePageCtrl(userApiService) {
     var vm = this;
@@ -21,7 +16,7 @@ define(['./requestApi.config', './requestApi.service'],function () {
      */
     function updateUserState(user) {
       userApiService.getUserState(user).then(function (_userState) {
-        vm.userState = _userState.data["0"].status;
+        vm.userState = _userState.data['0'].status;
         console.log(vm.userState);
       });
     }
@@ -33,4 +28,6 @@ define(['./requestApi.config', './requestApi.service'],function () {
     })();
 
   }
-})
+
+  return welcomePageCtrl;
+});

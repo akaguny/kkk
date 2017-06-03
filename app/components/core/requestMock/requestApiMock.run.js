@@ -1,4 +1,4 @@
-define([],function () {
+define(['angular'], function () {
 
   'use strict';
 
@@ -34,8 +34,5 @@ define([],function () {
     });
   }
 
-  // Конфиг выполняется на этапе инициализации
-  angular.module( 'boardGame.requestApiMock')
-    .run( requestApiMocksRun );
-
+  return requestApiMocksRun;
 });

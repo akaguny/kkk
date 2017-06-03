@@ -1,13 +1,2 @@
-// define('boardGame', 'components/core/app');
-// define('boardGame.config', 'components/core/config.module');
-
-// require('requestMock/define.js');
-// 'boardGame.requestApiMock',
-//   'boardGame.config',
-//   'boardGame.playRoomList',
-//   'boardGame.playRoom',
-//   'boardGame.playBoard',
-//   'boardGame.card',
-//   'boardGame.requestApi',
-//   'boardGame.userApi',
-//   'boardGame.welcomePage'
+define('boardGame.requestApi', ['components/core/request/requestApi.module']);
+define('boardGame.userApi', ['components/core/user/userApi.module']);
